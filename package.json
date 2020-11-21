@@ -1,0 +1,20 @@
+{
+  "name": "my-cli",
+  "version": "1.0.0",
+  "description": "基于webpack5脚手架工具",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chenyong9528/my-cli.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chenyong9528/my-cli/issues"
+  },
+  "homepage": "https://github.com/chenyong9528/my-cli#readme"
+}
