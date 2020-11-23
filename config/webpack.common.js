@@ -14,7 +14,7 @@ module.exports = {
     page3: './src/page3.js',
   },
   output: {
-    filename: 'js/[name].js',
+    filename: 'js/[name].[contenthash:6].js',
     path: path.resolve(__dirname, '../dist'),
   },
   module: {
@@ -50,7 +50,7 @@ module.exports = {
     ],
   },
   optimization: {
-    // runtimeChunk: 'single',
+    runtimeChunk: 'single',
     splitChunks: {
       cacheGroups: {
         vendors: {

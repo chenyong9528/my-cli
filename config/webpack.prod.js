@@ -39,5 +39,9 @@ module.exports = merge(common, {
     minimize: true,
     minimizer: [new CssMinimizerPlugin()],
   },
-  plugins: [new MiniCssExtractPlugin({ filename: 'css/[name].css' })],
+  plugins: [
+    new MiniCssExtractPlugin({
+      filename: 'css/[name].[contenthash:6].css',
+    }),
+  ],
 })
