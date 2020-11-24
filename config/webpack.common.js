@@ -14,7 +14,7 @@ module.exports = {
     page3: './src/page3.js',
   },
   output: {
-    filename: 'js/[name].[contenthash:6].js',
+    filename: 'js/[name].[contenthash:8].js',
     path: path.resolve(__dirname, '../dist'),
   },
   module: {
@@ -57,6 +57,7 @@ module.exports = {
           chunks: 'initial',
           priority: -10,
           test: /[\\/]node_modules[\\/]/,
+          reuseExistingChunk: true,
           name: 'vendors',
         },
         common: {
