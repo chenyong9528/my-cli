@@ -5,7 +5,12 @@ const common = require('./webpack.common.js')
 
 // css和sass公共loader
 const cssLoaders = [
-  MiniCssExtractPlugin.loader,
+  {
+    loader: MiniCssExtractPlugin.loader,
+    options: {
+      publicPath: '../',
+    },
+  },
   'css-loader',
   {
     loader: 'postcss-loader',

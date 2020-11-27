@@ -3,11 +3,14 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ESLintPlugin = require('eslint-webpack-plugin')
 
+const env = process.env.NODE_ENV
+
 module.exports = {
-  // mode: process.env.NODE_ENV,
-  mode: 'development',
-  devtool: 'inline-source-map',
-  target: 'web',
+  mode: env,
+  // mode: 'development',
+  devtool:
+    env === 'development' ? 'inline-source-map' : 'hidden-source-map',
+  target: env === 'development' ? 'web' : 'browserslist',
   entry: {
     page1: './src/page1.js',
     page2: './src/page2.js',
@@ -27,7 +30,6 @@ module.exports = {
             options: {
               name: '[name].[contenthash:8].[ext]',
               outputPath: 'imgs', // 打包的图片放在该文件下
-              publicPath: './imgs/', // 公共路径
               limit: 8192,
             },
           },
