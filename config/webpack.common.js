@@ -8,8 +8,7 @@ const env = process.env.NODE_ENV
 module.exports = {
   mode: env,
   // mode: 'development',
-  devtool:
-    env === 'development' ? 'inline-source-map' : 'hidden-source-map',
+  devtool: env === 'development' ? 'eval-source-map' : 'source-map',
   target: env === 'development' ? 'web' : 'browserslist',
   entry: {
     page1: './src/page1.js',
