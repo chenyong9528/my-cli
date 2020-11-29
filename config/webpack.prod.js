@@ -1,6 +1,7 @@
 const { merge } = require('webpack-merge')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin') // css打包
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin') // css压缩
+const TerserPlugin = require('terser-webpack-plugin') // js压缩
 const common = require('./webpack.common.js')
 
 // css和sass公共loader
@@ -42,7 +43,7 @@ module.exports = merge(common, {
   },
   optimization: {
     minimize: true,
-    minimizer: [new CssMinimizerPlugin()],
+    minimizer: [new CssMinimizerPlugin(), new TerserPlugin()],
   },
   plugins: [
     new MiniCssExtractPlugin({
