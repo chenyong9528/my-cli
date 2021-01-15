@@ -56,6 +56,7 @@ module.exports = {
       cacheGroups: {
         vendors: {
           chunks: 'initial',
+          minChunks: 2,
           priority: -10,
           test: /[\\/]node_modules[\\/]/,
           reuseExistingChunk: true,
