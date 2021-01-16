@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import axios from 'axios'
 import './assets/common'
-import 'normalize.css'
+import './assets/style/base.css'
 import './assets/style/common.scss'
 import './assets/style/page1.css'
 import img from './assets/imgs/baipiao.jpg'

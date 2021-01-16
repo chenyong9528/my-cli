@@ -4,10 +4,10 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ESLintPlugin = require('eslint-webpack-plugin')
 
 const env = process.env.NODE_ENV
+const publicPath = './'
 
 module.exports = {
   mode: env,
-  // mode: 'development',
   devtool: env === 'development' ? 'eval-source-map' : 'source-map',
   target: env === 'development' ? 'web' : 'browserslist',
   entry: {
@@ -16,6 +16,7 @@ module.exports = {
     page3: './src/page3.js',
   },
   output: {
+    publicPath,
     filename: 'js/[name].[contenthash:8].js',
     path: path.resolve(__dirname, '../dist'),
   },
@@ -27,8 +28,7 @@ module.exports = {
           {
             loader: 'url-loader', // url-loader具有file-loader全部功能，不同的是url-loader可以把资源转为base64
             options: {
-              name: '[name].[contenthash:8].[ext]',
-              outputPath: 'imgs', // 打包的图片放在该文件下
+              name: 'imgs/[name].[contenthash:8].[ext]',
               limit: 8192,
             },
           },
