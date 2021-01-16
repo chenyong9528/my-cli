@@ -50,6 +50,13 @@ module.exports = {
       },
     ],
   },
+  resolve: {
+    extensions: ['.js', '.json', '.jsx', '.css'],
+    alias: {
+      '@': path.resolve(__dirname, '../src'),
+      css: path.resolve(__dirname, '../src/assets/style'),
+    },
+  },
   optimization: {
     runtimeChunk: 'single',
     splitChunks: {
