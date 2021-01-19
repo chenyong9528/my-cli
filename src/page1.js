@@ -1,3 +1,4 @@
+import 'core-js'
 import Vue from 'vue'
 import axios from 'axios'
 import './assets/common'
